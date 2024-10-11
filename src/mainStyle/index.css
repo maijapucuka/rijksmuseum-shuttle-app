@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: black;
+}
+
+.App {
+  height: 100vh;
+}
+
+header {
+  padding: 3em;
+  background-color: lightblue;
+  height: 15%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3em;
+}
+@media (max-width: 1024px) {
+  header {
+    gap: 1em;
+  }
+}
+@media (max-width: 738px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+}
+header img {
+  width: 20%;
+}
+@media (max-width: 1024px) {
+  header img {
+    width: 30%;
+  }
+}
+@media (max-width: 738px) {
+  header img {
+    width: 30%;
+  }
+}
+header h1 {
+  text-transform: lowercase;
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 738px) {
+  header h1 {
+    font-size: 24px;
+  }
+}
+
+.layout {
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  background-color: lightblue;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  letter-spacing: 1px;
+  padding: 1em;
+}
+@media (max-width: 1024px) {
+  footer p {
+    display: none;
+  }
+}
+footer h1 {
+  font-size: 1.2rem;
+}
+footer p {
+  text-transform: uppercase;
+  display: inline;
+}
+footer a, footer span {
+  text-transform: uppercase;
+}
+footer a {
+  color: rgb(40, 30, 175);
+  font-weight: 800;
+  display: inline;
+}/*# sourceMappingURL=index.css.map */

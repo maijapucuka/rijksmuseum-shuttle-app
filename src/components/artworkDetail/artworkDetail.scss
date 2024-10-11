@@ -1,0 +1,163 @@
+@import "../../mainStyle/responsive.scss";
+
+.artworkDetail {
+
+    padding: 3em;
+    // padding-bottom: 15em;
+    // height: 70%;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    background-color: black;
+    color: aliceblue;
+
+    @include md {
+        // overflow-y: scroll;
+        // margin: 3em auto;
+        height: 70%;
+        width: 100%;
+        padding: 3em 1em;
+    }
+
+    @include sm {
+        // overflow-y: scroll;
+        // margin: 3em auto;
+        width: 100%;
+        padding: 3em 1em;
+    }
+
+    button {
+        align-self: flex-start;
+        background-color: rgb(194, 165, 70);
+        padding: .7em 1em;
+        border: none;
+        letter-spacing: .1rem;
+        font-weight: 600;
+        font-size: large;
+        cursor: pointer;
+
+        @include md {
+            // order: 1;
+            align-self: center;
+        }
+
+        @include sm {
+            // order: 1;
+            align-self: center;
+        }
+    }
+
+    .artworkWrapper {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // gap: 5em;
+        // height: 100%;
+
+        min-height: 80%;
+        // width: 80%;
+        margin: 0 auto;
+        // background-color: antiquewhite;
+        // padding: 20px 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5em;
+        padding: 3em auto;
+        // overflow-y: scroll;
+        // scrollbar-width: none;
+        // -ms-overflow-style: none;
+
+        @include md {
+            flex-direction: column;
+            gap: 3em;
+            order: 2;
+            padding: 3em auto;
+            width: 90%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        // @include sm {
+        //     flex-direction: column;
+        //     order: 2;
+        //     padding: 3em auto;
+        //     overflow-y: scroll;
+        //     scrollbar-width: none;
+        //     -ms-overflow-style: none;
+        // }
+
+        .artworkText {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            letter-spacing: 1px;
+
+            h1 {
+                color: rgb(194, 165, 70);
+                border-bottom: 1px solid rgb(194, 165, 70);
+                padding-bottom: 1em;
+
+                @include sm {
+                    border: none;
+                }
+
+            }
+
+            h2 {
+
+                @include sm {
+                    border-bottom: 1px solid lightblue;
+                    border-top: 1px solid lightblue;
+                    padding: 1em 0;
+                    }
+                }
+
+            p {
+                border-bottom: 1px solid lightblue;
+                padding-bottom: 2em;
+
+                @include md {
+                    border: none;
+                    text-align: center;
+                }
+            }
+
+            @include md {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        .artworkImg {
+            flex: 1;
+            background-color: black;
+            text-align: center;
+            border: 9px solid lightblue;
+
+            @include md {
+                width: 50%;
+            }
+
+            @include sm {
+                width: 100%;
+            }
+
+            img {
+                // width: 25em;
+                width: auto;
+                height: auto;
+                max-width: 25em;
+                max-height: 30em;
+                object-fit: cover;
+                // border: 9px solid lightblue;
+            }
+        }
+    }
+}

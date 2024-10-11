@@ -1,0 +1,130 @@
+.artworkDetail {
+  padding: 3em;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  background-color: black;
+  color: aliceblue;
+}
+@media (max-width: 1024px) {
+  .artworkDetail {
+    height: 70%;
+    width: 100%;
+    padding: 3em 1em;
+  }
+}
+@media (max-width: 738px) {
+  .artworkDetail {
+    width: 100%;
+    padding: 3em 1em;
+  }
+}
+.artworkDetail button {
+  align-self: flex-start;
+  background-color: rgb(194, 165, 70);
+  padding: 0.7em 1em;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: large;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .artworkDetail button {
+    align-self: center;
+  }
+}
+@media (max-width: 738px) {
+  .artworkDetail button {
+    align-self: center;
+  }
+}
+.artworkDetail .artworkWrapper {
+  min-height: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5em;
+  padding: 3em auto;
+}
+@media (max-width: 1024px) {
+  .artworkDetail .artworkWrapper {
+    flex-direction: column;
+    gap: 3em;
+    order: 2;
+    padding: 3em auto;
+    width: 90%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+.artworkDetail .artworkWrapper .artworkText {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  letter-spacing: 1px;
+}
+.artworkDetail .artworkWrapper .artworkText h1 {
+  color: rgb(194, 165, 70);
+  border-bottom: 1px solid rgb(194, 165, 70);
+  padding-bottom: 1em;
+}
+@media (max-width: 738px) {
+  .artworkDetail .artworkWrapper .artworkText h1 {
+    border: none;
+  }
+}
+@media (max-width: 738px) {
+  .artworkDetail .artworkWrapper .artworkText h2 {
+    border-bottom: 1px solid lightblue;
+    border-top: 1px solid lightblue;
+    padding: 1em 0;
+  }
+}
+.artworkDetail .artworkWrapper .artworkText p {
+  border-bottom: 1px solid lightblue;
+  padding-bottom: 2em;
+}
+@media (max-width: 1024px) {
+  .artworkDetail .artworkWrapper .artworkText p {
+    border: none;
+    text-align: center;
+  }
+}
+@media (max-width: 1024px) {
+  .artworkDetail .artworkWrapper .artworkText {
+    width: 80%;
+    text-align: center;
+  }
+}
+.artworkDetail .artworkWrapper .artworkImg {
+  flex: 1;
+  background-color: black;
+  text-align: center;
+  border: 9px solid lightblue;
+}
+@media (max-width: 1024px) {
+  .artworkDetail .artworkWrapper .artworkImg {
+    width: 50%;
+  }
+}
+@media (max-width: 738px) {
+  .artworkDetail .artworkWrapper .artworkImg {
+    width: 100%;
+  }
+}
+.artworkDetail .artworkWrapper .artworkImg img {
+  width: auto;
+  height: auto;
+  max-width: 25em;
+  max-height: 30em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=artworkDetail.css.map */
