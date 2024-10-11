@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/rijksmuseum-shuttle-app/static/css/main.7c25afa6.css",
-    "main.js": "/rijksmuseum-shuttle-app/static/js/main.2c57b260.js",
+    "main.js": "/rijksmuseum-shuttle-app/static/js/main.9d4571ed.js",
     "static/js/453.9d425ad8.chunk.js": "/rijksmuseum-shuttle-app/static/js/453.9d425ad8.chunk.js",
     "static/media/Logo_Rijksmuseum.svg.png": "/rijksmuseum-shuttle-app/static/media/Logo_Rijksmuseum.svg.6867949a000cdc0e42d9.png",
     "static/media/logo.svg": "/rijksmuseum-shuttle-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/rijksmuseum-shuttle-app/index.html",
     "main.7c25afa6.css.map": "/rijksmuseum-shuttle-app/static/css/main.7c25afa6.css.map",
-    "main.2c57b260.js.map": "/rijksmuseum-shuttle-app/static/js/main.2c57b260.js.map",
+    "main.9d4571ed.js.map": "/rijksmuseum-shuttle-app/static/js/main.9d4571ed.js.map",
     "453.9d425ad8.chunk.js.map": "/rijksmuseum-shuttle-app/static/js/453.9d425ad8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7c25afa6.css",
-    "static/js/main.2c57b260.js"
+    "static/js/main.9d4571ed.js"
   ]
 }
