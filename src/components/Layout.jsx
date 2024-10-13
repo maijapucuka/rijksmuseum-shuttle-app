@@ -1,9 +1,10 @@
-import '../../mainStyle/index.css'
+// Main style file
+import '../mainStyle/index.css'
 import { Outlet } from "react-router-dom"
-import Header from "../header/header"
-import Footer from "../footer/Footer"
+import Header from "./Header"
+import Footer from "./Footer"
 
-function Layout(){
+function Layout() {
   return (
     <div className='layout'>
         <Header />

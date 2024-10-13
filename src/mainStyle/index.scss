@@ -15,14 +15,14 @@ body {
     overflow: hidden;
     height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: black;
+    background-color: rgb(29, 24, 24);
 }
 
 .App {
     height: 100vh;
-    // background-color: rebeccapurple;
 }
 
+//--------------- HEADER ---------------
 header {
     padding: 3em;
     background-color: lightblue;
@@ -30,66 +30,55 @@ header {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 3em;
+    gap: 2em;
 
     @include md {
         gap: 1em;
-        // height: 10%;
     }
 
     @include sm {
         flex-direction: column;
         align-items: center;
-        gap: 1em;
-        // height: 10%;
     }
 
     img {
-        // display: block;
         width: 20%;
-        // background-color: aqua;
-        // margin: 0 auto;
 
-        @include md {
-            width: 30%;
-        }
-
-        @include sm {
+        @include lg {
             width: 30%;
         }
     }
 
     h1 {
         text-transform: lowercase;
-        font-size: 50px;
+        font-size: 2.5rem;
         color: rgba($color: #000000, $alpha: .8);
+        text-align: center;
 
         @include md {
-            font-size: 32px;
+            font-size: 2rem;
         }
 
         @include sm {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 }
 
+//--------------- LAYOUT ---------------
 .layout {
     height: 100%;
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    // position: relative;
-    // @include md {
-    //     overflow: hidden;
-    // }
 }
 
+//--------------- FOOTER ---------------
 footer {
-    position: sticky;
-        bottom: 0;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 15%;
+    height: 120px;
     background-color: lightblue;
     text-align: center;
     display: flex;
@@ -101,8 +90,6 @@ footer {
     padding: 1em;
 
     @include md {
-        // height: 15%;
-        
 
         p {
             display: none;
@@ -126,6 +113,10 @@ footer {
         color: rgb(40, 30, 175);
         font-weight: 800;
         display: inline;
+    }
+
+    a:hover, a:focus {
+        color: rgb(70, 13, 117);
     }
 
 }

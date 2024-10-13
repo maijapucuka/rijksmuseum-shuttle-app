@@ -1,20 +1,23 @@
-import logo from './logo.svg';
 import './mainStyle/index.css';
-import ArtworkGallery from './components/artworkGalley/ArtworkGallery.jsx';
-import ArtworkDetail from './components/artworkDetail/ArtworkDetail.jsx';
-import Layout from './components/layout/layout.jsx';
+import ArtworkGallery from './pages/artworkGallery/ArtworkGallery.jsx';
+import ArtworkDetail from './pages/artworkDetail/ArtworkDetail.jsx';
+import Layout from './components/Layout.jsx';
+import NotFound from './pages/NotFound.jsx';
 // import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      {/* <Router> */}
         <Routes>
           <Route path="/" element={<Layout />}>
+            {/* <Route path="*" element={<NotFound />} /> */}
             <Route index element={<ArtworkGallery />} />
             <Route path='/artwork/:id' element={<ArtworkDetail />} />
-            </Route>
+          </Route>
         </Routes>
+      {/* </Router> */}
     </div>
   );
 }

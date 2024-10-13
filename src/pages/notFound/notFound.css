@@ -1,0 +1,22 @@
+.notFound {
+  height: 70%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+}
+.notFound .backToHomeBtn {
+  color: rgb(194, 165, 70);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.5s ease all;
+}
+.notFound .backToHomeBtn .backToHomeBtn:hover, .notFound .backToHomeBtn .backToHomeBtn:focus {
+  background-color: rgb(241, 170, 17);
+}/*# sourceMappingURL=notFound.css.map */

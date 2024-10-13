@@ -1,0 +1,24 @@
+.notFound {
+    height: 70%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+
+    .backToHomeBtn {
+        color: rgb(194, 165, 70);
+        letter-spacing: .1rem;
+        font-weight: 600;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: 0.5s ease all;
+
+        .backToHomeBtn:hover, .backToHomeBtn:focus {
+            background-color: rgb(241, 170, 17);
+        }
+    }
+}
