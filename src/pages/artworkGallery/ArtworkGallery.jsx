@@ -123,7 +123,7 @@ function ArtworkGallery() {
                         }}  
                             key={item.objectNumber}
                             className="artworkWrapper"
-                            aria-label={`View details about ${item.webImage ? item.webImage.longTitle : 'this artwork'}`}
+                            aria-label={`View details about ${item.longTitle ? item.longTitle : 'this artwork'}`}
 
                             onMouseEnter={() => setHover(true)}
                             onFocus={() => setHover(true)}
@@ -133,7 +133,7 @@ function ArtworkGallery() {
                             {/* Check if artwork img is available, if yes: display it */}
                             {item.webImage ? (
                                 <img
-                                    key={item.webImage.url} src={item.webImage.url} alt={item.webImage.longTitle}
+                                    src={item.webImage.url} alt={item.longTitle}
                                 />
                             ) : (
                                 <h2>Image not available</h2>
