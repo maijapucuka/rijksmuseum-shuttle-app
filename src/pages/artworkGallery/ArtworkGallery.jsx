@@ -29,17 +29,19 @@ function ArtworkGallery() {
          const promises = [...Array(3)].map(() => {
 
             // Get a random page from the max allowed number of pages
-            const randomPage = Math.floor(Math.random() * 10000);
+            const randomPage = Math.floor((Math.random() * 1000) + 1);
             
-            return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${RIJKSMUSEUM_API_KEY}&ps=1&p=${randomPage}`)
+            return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${RIJKSMUSEUM_API_KEY}&p=${randomPage}`)
                 .then(res => {
                     if (!res.ok) {
                         throw new Error("Failed to fetch data. Please try again later!");
                     }
-                    return res.json()
+                    return res.json();
                 })
-                // Get the first artwork from the results
-                .then(data => data.artObjects[0]);
+                // Get the one of ten artworks from the result page
+                .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
+                
+                
         });
 
         // Wait for all the API calls to complete
@@ -118,7 +120,8 @@ function ArtworkGallery() {
                         <Link to={{
                             pathname: `/artwork/${item.objectNumber}`,
                             state: {artwork: item}
-                        }} 
+                        }}  
+                            key={item.objectNumber}
                             className="artworkWrapper"
                             aria-label={`View details about ${item.webImage ? item.webImage.longTitle : 'this artwork'}`}
 
