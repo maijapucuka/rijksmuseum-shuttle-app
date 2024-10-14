@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "./artworkGallery.css"
 import { Link } from "react-router-dom"
 // Font Awesome icons
@@ -18,22 +18,20 @@ function ArtworkGallery() {
     // Cache expiry time
     const cacheExpirationTime = 60 * 10000;
 
-    // const numberOfArtworksToBeFetched = 3;
-    const numberOfArtworksToBeFetched = 1;
+    const numberOfArtworksToBeFetched = 3;
 
     const fetchArtWorks = () => {
 
         setLoading(true);
         setError(null);
 
-        // Calculate the maximum number of pages
-        const maxPages = Math.floor(10000 / numberOfArtworksToBeFetched) - 1;
-        const randomPage = Math.floor(Math.random() * maxPages);
-
          // Create an array of 3 promises, each fetching one artwork from a different random page
          const promises = [...Array(3)].map(() => {
-            const randomPage = Math.floor(Math.random() * maxPages);
-            return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${RIJKSMUSEUM_API_KEY}&ps=${numberOfArtworksToBeFetched}&p=${randomPage}`)
+
+            // Get a random page from the max allowed number of pages
+            const randomPage = Math.floor(Math.random() * 10000);
+            
+            return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${RIJKSMUSEUM_API_KEY}&ps=1&p=${randomPage}`)
                 .then(res => {
                     if (!res.ok) {
                         throw new Error("Failed to fetch data. Please try again later!");
@@ -54,12 +52,12 @@ function ArtworkGallery() {
                 };
                 localStorage.setItem("cachedArtworks", JSON.stringify(cacheData));
 
-                // Update Art Gallery state with data from API call, stop loading state
+                // Update Art Gallery state with data from API call; stop loading state
                 setArtGallery(results);
                 setLoading(false);
             })
 
-            //If there is error, update error state with message
+            //If there is an error, update error state with message; stop loading stage
             .catch(err => {
                 setError(err.message);
                 setLoading(false);
@@ -95,18 +93,19 @@ function ArtworkGallery() {
 
         <div className="artworkGallery">
             
-            {/* ERROR STATE */}
+            {/* If there is an error, add error className */}
             <div className={`wrapper ${error ? "error" : ""}`}>
 
+                {/* If there is an error, display error message*/}
                 {error &&
                     <div className="errorWrapper">
                         <h1>{error}</h1>
                     </div>
                 }
                 
-                {/* LOADING STATE */}
+                {/* Loading state */}
                 {loading ? (
-                    [...Array(3)].map((_, index) => (
+                    [...Array(numberOfArtworksToBeFetched)].map((_, index) => (
                         <div key={index} className="loadingPlaceholder">
                             <FontAwesomeIcon icon={faSpinner} className="loadingIcon" />
                         </div>
@@ -128,7 +127,7 @@ function ArtworkGallery() {
                             onBlur={() => setHover(false)}
                         >
                             
-                            {/* If artwork has image, display it */}
+                            {/* Check if artwork img is available, if yes: display it */}
                             {item.webImage ? (
                                 <img
                                     key={item.webImage.url} src={item.webImage.url} alt={item.webImage.longTitle}

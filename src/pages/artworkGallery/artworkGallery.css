@@ -42,18 +42,13 @@
     order: 2;
   }
 }
-@media (max-width: 738px) {
-  .artworkGallery .wrapper {
-    flex-direction: column;
-    overflow-y: scroll;
-    order: 2;
-  }
-}
 .artworkGallery .wrapper .loadingPlaceholder {
   position: relative;
-  width: 20em;
   min-height: 25em;
   border: 9px solid lightblue;
+  flex: 1 1 30%;
+  max-width: 30%;
+  min-width: 280px;
 }
 .artworkGallery .wrapper .loadingPlaceholder .loadingIcon {
   color: rgb(194, 165, 70);
@@ -77,12 +72,14 @@
 }
 .artworkGallery .wrapper .artworkWrapper {
   position: relative;
-  width: 20em;
   height: 25em;
   border: 9px solid lightblue;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 30%;
+  max-width: 30%;
+  min-width: 280px;
 }
 @media (max-width: 1024px) {
   .artworkGallery .wrapper .artworkWrapper {

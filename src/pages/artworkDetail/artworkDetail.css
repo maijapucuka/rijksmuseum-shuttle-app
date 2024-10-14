@@ -1,116 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-body {
-  overflow: hidden;
-  height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: rgb(29, 24, 24);
-}
-
-.App {
-  height: 100vh;
-}
-
-header {
-  padding: 3em;
-  background-color: lightblue;
-  height: 15%;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 2em;
-}
-@media (max-width: 1024px) {
-  header {
-    gap: 1em;
-  }
-}
-@media (max-width: 738px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-header img {
-  width: 20%;
-}
-@media (max-width: 1366px) {
-  header img {
-    width: 30%;
-  }
-}
-header h1 {
-  text-transform: lowercase;
-  font-size: 2.5rem;
-  color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 738px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-}
-
-.layout {
-  height: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  background-color: lightblue;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-  letter-spacing: 1px;
-  padding: 1em;
-}
-@media (max-width: 1024px) {
-  footer p {
-    display: none;
-  }
-}
-footer h1 {
-  font-size: 1.2rem;
-}
-footer p {
-  text-transform: uppercase;
-  display: inline;
-}
-footer a, footer span {
-  text-transform: uppercase;
-}
-footer a {
-  color: rgb(40, 30, 175);
-  font-weight: 800;
-  display: inline;
-}
-footer a:hover, footer a:focus {
-  color: rgb(70, 13, 117);
-}
-
 .artworkDetail {
   padding: 3em;
   height: 70%;
@@ -200,17 +87,31 @@ footer a:hover, footer a:focus {
   gap: 5em;
   padding: 3em auto;
 }
+.artworkDetail .artworkWrapper .errorWrapper h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1em;
+}
+@media (max-width: 738px) {
+  .artworkDetail .artworkWrapper .errorWrapper h1 {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 1024px) {
   .artworkDetail .artworkWrapper {
     flex-direction: column;
     gap: 3em;
-    order: 2;
     padding: 3em auto;
     width: 90%;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: lightblue black;
     scroll-behavior: smooth;
+  }
+  .artworkDetail .artworkWrapper.error {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 .artworkDetail .artworkWrapper .artworkText {
