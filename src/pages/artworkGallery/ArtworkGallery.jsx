@@ -118,12 +118,12 @@ function ArtworkGallery() {
                         
                         // Link to artworks detail page
                         <Link to={{
-                            pathname: `/artwork/${item.objectNumber}`,
+                            pathname: `/artwork/${item?.objectNumber}`,
                             state: {artwork: item}
                         }}  
-                            key={item.objectNumber}
+                            key={item?.objectNumber}
                             className="artworkWrapper"
-                            aria-label={`View details about ${item.longTitle ? item.longTitle : 'this artwork'}`}
+                            aria-label={`View details about ${item?.longTitle ? item?.longTitle : 'this artwork'}`}
 
                             onMouseEnter={() => setHover(true)}
                             onFocus={() => setHover(true)}
@@ -131,9 +131,9 @@ function ArtworkGallery() {
                         >
                             
                             {/* Check if artwork img is available, if yes: display it */}
-                            {item.webImage ? (
+                            {item?.webImage ? (
                                 <img
-                                    src={item.webImage.url} alt={item.longTitle}
+                                    src={item?.webImage.url} alt={item?.longTitle}
                                 />
                             ) : (
                                 <h2>Image not available</h2>
