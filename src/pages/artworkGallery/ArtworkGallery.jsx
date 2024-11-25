@@ -39,8 +39,8 @@ function ArtworkGallery() {
                     return res.json();
                 })
                 // Get the one of ten artworks from the result page
-                .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
-                // .then(data => console.log(data);
+                // .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
+                .then(data => console.log(data);
                 
                 
         });
