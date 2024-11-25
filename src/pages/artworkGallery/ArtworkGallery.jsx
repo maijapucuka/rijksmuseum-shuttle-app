@@ -114,7 +114,7 @@ function ArtworkGallery() {
                     ))
                 ) : (
                     // If no errors and 
-                    !loading && !error && artGallery && artGallery.map((item) => (
+                    !loading && !error && artGallery && artGallery?.item && artGallery.map((item) => (
                         
                         // Link to artworks detail page
                         <Link to={{
