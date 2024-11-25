@@ -82,10 +82,10 @@ function ArtworkDetail() {
                         aria-label="View full-size image"
                     >
                         {/* Check if artwork img is available, if yes: display it */}
-                        {artwork.artObject.webImage ? (
+                        {artwork?.artObject?.webImage ? (
                             <img 
-                                src={artwork.artObject.webImage.url} 
-                                alt={artwork.artObject.longTitle}
+                                src={artwork?.artObject?.webImage?.url} 
+                                alt={artwork?.artObject?.longTitle}
                                 tabIndex={-1}
                             />
                         ) : (
@@ -96,15 +96,15 @@ function ArtworkDetail() {
                     {/* Info about the artwork */}
                     <div className='artworkText'>
                         
-                        <h1>{artwork.artObject.longTitle}</h1>
+                        <h1>{artwork?.artObject?.longTitle}</h1>
 
                         <h2>Description of the artwork in Dutch</h2>
                         {/* Check if info about artwork in NL is available, if yes: display it */}
-                        <p>{artwork.artObject.description ? artwork.artObject.description : "Not Found"}</p>
+                        <p>{artwork?.artObject?.description ? artwork?.artObject?.description : "Not Found"}</p>
 
                         <h2>Description of the artwork in English</h2>
                         {/* Check if info about artwork in EN is available, if yes: display it */}
-                        <p>{artwork.artObjectPage.plaqueDescription ? artwork.artObjectPage.plaqueDescription : "Not Found"}</p>
+                        <p>{artwork?.artObjectPage?.plaqueDescription ? artwork?.artObjectPage?.plaqueDescription : "Not Found"}</p>
                     </div>
                 </>}
         </div>
@@ -119,7 +119,7 @@ function ArtworkDetail() {
             </button>
 
             {/* Check if artwork img is available, if yes: display it */}
-            <img src={artwork.artObject.webImage.url} alt={artwork.artObject.longTitle} />
+            <img src={artwork?.artObject?.webImage?.url} alt={artwork?.artObject?.longTitle} />
         </div>}
     </div>
   )
