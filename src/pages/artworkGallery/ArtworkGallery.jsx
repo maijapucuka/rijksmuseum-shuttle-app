@@ -121,7 +121,7 @@ function ArtworkGallery() {
                         }}  
                             key={item?.objectNumber}
                             className="artworkWrapper"
-                            aria-label={`View details about ${item?.longTitle ? item?.longTitle : 'this artwork'}`}
+                            aria-label={`View details about ${item.longTitle ? item.longTitle : 'this artwork'}`}
 
                             onMouseEnter={() => setHover(true)}
                             onFocus={() => setHover(true)}
