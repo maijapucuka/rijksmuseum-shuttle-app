@@ -39,9 +39,7 @@ function ArtworkGallery() {
                     return res.json();
                 })
                 // Get the one of ten artworks from the result page
-                .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
-                
-                
+                .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);       
         });
 
         // Wait for all the API calls to complete
@@ -118,12 +116,12 @@ function ArtworkGallery() {
                         
                         // Link to artworks detail page
                         <Link to={{
-                            pathname: `/artwork/${item.objectNumber}`,
+                            pathname: `/artwork/${item?.objectNumber}`,
                             state: {artwork: item}
                         }}  
-                            key={item.objectNumber}
+                            key={item?.objectNumber}
                             className="artworkWrapper"
-                            aria-label={`View details about ${item.longTitle ? item.longTitle : 'this artwork'}`}
+                            aria-label={`View details about ${item?.longTitle ? item?.longTitle : 'this artwork'}`}
 
                             onMouseEnter={() => setHover(true)}
                             onFocus={() => setHover(true)}
@@ -131,9 +129,9 @@ function ArtworkGallery() {
                         >
                             
                             {/* Check if artwork img is available, if yes: display it */}
-                            {item.webImage ? (
+                            {item?.webImage ? (
                                 <img
-                                    src={item.webImage.url} alt={item.longTitle}
+                                    src={item?.webImage.url} alt={item?.longTitle}
                                 />
                             ) : (
                                 <h2>Image not available</h2>
