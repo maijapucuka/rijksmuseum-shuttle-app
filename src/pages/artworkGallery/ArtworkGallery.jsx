@@ -39,8 +39,7 @@ function ArtworkGallery() {
                     return res.json();
                 })
                 // Get the one of ten artworks from the result page
-                // .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
-                .then(data => console.log(data);
+                .then(data => data.artObjects[Math.floor((Math.random() * 10) + 1)]);
                 
                 
         });
@@ -115,16 +114,16 @@ function ArtworkGallery() {
                     ))
                 ) : (
                     // If no errors and 
-                    !loading && !error && artGallery && artGallery?.item && artGallery.map((item) => (
+                    !loading && !error && artGallery && artGallery.map((item) => (
                         
                         // Link to artworks detail page
                         <Link to={{
-                            pathname: `/artwork/${item?.objectNumber}`,
+                            pathname: `/artwork/${item.objectNumber}`,
                             state: {artwork: item}
                         }}  
-                            key={item?.objectNumber}
+                            key={item.objectNumber}
                             className="artworkWrapper"
-                            aria-label={`View details about ${item?.longTitle ? item?.longTitle : 'this artwork'}`}
+                            aria-label={`View details about ${item.longTitle ? item?.longTitle : 'this artwork'}`}
 
                             onMouseEnter={() => setHover(true)}
                             onFocus={() => setHover(true)}
@@ -134,7 +133,7 @@ function ArtworkGallery() {
                             {/* Check if artwork img is available, if yes: display it */}
                             {item?.webImage ? (
                                 <img
-                                    src={item?.webImage.url} alt={item?.longTitle}
+                                    src={item.webImage.url} alt={item.longTitle}
                                 />
                             ) : (
                                 <h2>Image not available</h2>
