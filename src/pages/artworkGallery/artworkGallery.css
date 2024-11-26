@@ -95,25 +95,23 @@
 }
 .artworkGallery .wrapper .artworkWrapper h2 {
   color: #fff;
-  padding-top: 60%;
   margin: 0;
+  transition: 0.1s ease all;
 }
 .artworkGallery .wrapper .artworkWrapper h1 {
   text-decoration: none;
   color: #fff;
   width: 100%;
   text-align: center;
-  font-size: 40px;
+  font-size: 34px;
   height: 0;
   position: absolute;
   transition: 0.5s ease all;
   visibility: hidden;
   opacity: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Vertically center text */
+  justify-content: center; /* Horizontally center text */
 }
 .artworkGallery .wrapper .artworkWrapper:hover h1, .artworkGallery .wrapper .artworkWrapper:focus h1 {
   background-color: rgba(0, 0, 0, 0.5);
@@ -121,6 +119,9 @@
   height: 100%;
   padding: 50% 0;
   opacity: 1;
+}
+.artworkGallery .wrapper .artworkWrapper:hover .imageNotAvailable, .artworkGallery .wrapper .artworkWrapper:focus .imageNotAvailable {
+  visibility: hidden;
 }
 .artworkGallery .fetchArtworksBtn {
   border: none;

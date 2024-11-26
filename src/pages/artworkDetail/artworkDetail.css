@@ -169,6 +169,9 @@
   max-width: 90%;
   width: 20em;
   height: 25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .artworkDetail .artworkWrapper .artworkImg img {
   width: 100%;

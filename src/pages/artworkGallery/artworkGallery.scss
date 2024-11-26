@@ -108,8 +108,10 @@
 
             h2 {
                 color: #fff;
-                padding-top: 60%;
+                // padding-top: 60%;
                 margin: 0;
+                // visibility: hidden;
+                transition: 0.1s ease all;
             }
 
             h1 {
@@ -117,17 +119,17 @@
                 color: #fff;
                 width: 100%;
                 text-align: center;
-                font-size: 40px;
+                font-size: 34px;
                 height: 0;
                 position: absolute;
                 transition: 0.5s ease all;
                 visibility: hidden;
                 opacity: 0;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                margin: auto;
+                // width: 100%; 
+                // height: 100%;
+                display: flex; /* Enable flexbox */
+                align-items: center; /* Vertically center text */
+                justify-content: center; /* Horizontally center text */
             }
         }
 
@@ -138,6 +140,10 @@
                 height: 100%;
                 padding: 50% 0; 
                 opacity: 1;
+            }
+
+            .imageNotAvailable {
+                visibility: hidden;
             }
         }
     }

@@ -94,14 +94,14 @@ function ArtworkGallery() {
         <div className="artworkGallery">
             
             {/* If there is an error, add error className */}
-            <div className={`wrapper ${error ? "error" : ""}`}>
+            <div className={`wrapper ${error ? "An unexpected error occurred. Please try again!" : ""}`}>
 
                 {/* If there is an error, display error message*/}
-                {error &&
+                {error && (
                     <div className="errorWrapper">
-                        <h1>{error}</h1>
+                        <h1>An unexpected error occurred. Please try again!</h1>
                     </div>
-                }
+                )}
                 
                 {/* Loading state */}
                 {loading ? (
@@ -112,7 +112,9 @@ function ArtworkGallery() {
                     ))
                 ) : (
                     // If no errors and 
-                    !loading && !error && artGallery && artGallery.map((item) => (
+                    !loading && !error && artGallery && artGallery.map((item) =>
+
+                        item?.objectNumber ? (
                         
                         // Link to artworks detail page
                         <Link to={{
@@ -128,23 +130,45 @@ function ArtworkGallery() {
                             onBlur={() => setHover(false)}
                         >
                             
-                            {/* Check if artwork img is available, if yes: display it */}
-                            {item?.webImage ? (
+                            {item?.webImage && (
                                 <img
-                                    src={item?.webImage.url} alt={item?.longTitle}
+                                    src={item?.webImage?.url} alt={item?.longTitle}
                                 />
-                            ) : (
-                                <h2>Image not available</h2>
                              )}
 
+                            {!item?.objectNumber && (
+                                <h2>
+                                    Artwork not found
+                                </h2>
+                            )}
+
+                            {item?.objectNumber && !item?.webImage && (
+                                <h2 className="imageNotAvailable">
+                                    Image not available
+                                </h2>
+                            )}
+
                             {/* Artwork img hover text */}
-                            {hover && (
+                            {item?.objectNumber && !error && hover && (
                                 <h1 className="learnMoreText" aria-live="polite">
                                     Learn More
                                 </h1>
                             )}
                         </Link>
-                    ))
+
+                        ) : (
+
+                        <div 
+                            key={item?.id || Math.random()}
+                            className="artworkWrapper"
+                            aria-label="This artwork is not available"
+                        >                   
+                            <h2>
+                                Artwork not found
+                            </h2>
+                        </div>
+                        )
+                    )
                 )}
             </div>
             {/* Button with text depending if artworks are loading / not loading */}

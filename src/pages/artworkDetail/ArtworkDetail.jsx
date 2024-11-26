@@ -109,7 +109,7 @@ function ArtworkDetail() {
                 </>}
         </div>
         {/* Full size img component with img and close btn */}
-        {fullImg && <div className='fullImg'>
+        {artwork?.artObject?.webImage && fullImg && <div className='fullImg'>
             <button 
                 className='close-btn'
                 onClick={() => setFullImg(false)}
